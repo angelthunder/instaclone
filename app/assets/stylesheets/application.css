@@ -12,5 +12,6 @@
  *
  *= require_directory ./reset
  *= require_directory ./base
+ *= require_directory ./components
  *= require_self
  */
