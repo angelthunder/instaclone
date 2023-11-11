@@ -1,1 +1,24 @@
-<%= post.body %>
+<div class="post">
+  <div class="post-author">
+    <div class="avatar avatar-<%= rand(1..3) %>"></div>
+    <div><%= post.user.email %></div>
+  </div>
+
+  <div class="post-body">
+    <span><%= post.body %></span>
+  </div>
+
+  <div class="post-actions">
+    <div class="post-actions-like"></div>
+    <div class="post-actions-comments">4 comments</div>
+  </div>
+
+  <div class="post-comments">
+    <%= render partial: "comment",
+      locals: { email: "Laura", body: "Something that I said" } %>
+    <%= render partial: "comment",
+      locals: { email: "Eve", body: "Something that I said" } %>
+    <%= render partial: "comment",
+      locals: { email: "Nahir", body: "Something that I said" } %>
+  </div>
+</div>
