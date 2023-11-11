@@ -2,16 +2,19 @@ eve, nahir, laura = User.create(
   [
     {
       email: "eve@mail.com",
+      username: "eve",
       password: 123_456,
       password_confirmation: 123_456
     },
     {
       email: "nahir@mail.com",
+      username: "nahir",
       password: 123_456,
       password_confirmation: 123_456
     },
     {
       email: "laura@mail.com",
+      username: "laura",
       password: 123_456,
       password_confirmation: 123_456
     },
