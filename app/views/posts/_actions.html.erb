@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "#{dom_id(post)}-likes" do %>
+    <% if liked?(post) %>
+      <%= render partial: "likes/unlike", locals: { post: } %>
+    <% else %>
+      <%= render partial: "likes/like", locals: { post: } %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= render partial: "likes/like", locals: { post: } %>
+<% end %>

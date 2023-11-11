@@ -5,6 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :username, presence: true
+
+  def like!(post)
+    likes << Like.new(post:)
+  end
+
+  def liked?(post)
+    likes.find_by(post:).present?
+  end
 end

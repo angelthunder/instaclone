@@ -9,7 +9,10 @@
   </div>
 
   <div class="post-actions">
-    <div class="actions-like"></div>
+    <%= turbo_frame_tag "post-likes" do %>
+      <%= button_to "", post_likes_path(post), class: "actions-like" %>
+    <% end %>
+
     <div class="actions-comments">4 comments</div>
   </div>
 

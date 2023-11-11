@@ -1,0 +1,16 @@
+.actions {
+  width: 24px;
+  height: 24px;
+}
+
+.actions-like {
+  background: url("likes/unliked.png");
+  background-size: contain;
+  display: block;
+}
+
+.actions-unlike {
+  background: url("likes/liked.png");
+  background-size: contain;
+  display: block;
+}
