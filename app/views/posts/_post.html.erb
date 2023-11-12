@@ -9,19 +9,12 @@
   </div>
 
   <div class="post-actions">
-    <%= turbo_frame_tag "post-likes" do %>
-      <%= button_to "", post_likes_path(post), class: "post-actions-like" %>
-    <% end %>
-
-    <div class="post-actions-comments">4 comments</div>
+    <%= render partial: "posts/actions", locals: { post: } %>
+    <%= render partial: "posts/count", locals: { post: } %>
   </div>
 
   <div class="post-comments">
-    <%= render partial: "comment",
-      locals: { email: "Laura", body: "Something that I said" } %>
-    <%= render partial: "comment",
-      locals: { email: "Eve", body: "Something that I said" } %>
-    <%= render partial: "comment",
-      locals: { email: "Nahir", body: "Something that I said" } %>
+    <%= render partial: "posts/comments/form", locals: { post: } %>
+    <%= render partial: "comments/list", locals: { post: } %>
   </div>
 </div>
