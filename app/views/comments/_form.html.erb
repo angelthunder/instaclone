@@ -1,0 +1,7 @@
+<%= form_with model: (comment ||= Comment.new),
+  url: post_comments_path(post),
+  class: "comment-form" do |f| %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>

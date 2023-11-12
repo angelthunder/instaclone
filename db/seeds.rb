@@ -30,3 +30,7 @@ nahir.like!(post_1)
 laura.like!(post_2)
 eve.like!(post_3)
 
+laura.comments.create(post: post_1, body: "This is something at the first comment")
+eve.comments.create(post: post_1, body: "This is something at the second comment")
+laura.comments.create(post: post_2, body: "This is something at the third comment")
+

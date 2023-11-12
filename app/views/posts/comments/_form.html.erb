@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <div id="<%= dom_id(post) %>-comment-form">
+    <%= render partial: "comments/form", locals: { post: } %>
+  </div>
+<% else %>
+  <%= render partial: "comments/form", locals: { post: } %>
+<% end %>
