@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def like!(post)
     likes << Like.new(post:)
   end
+
+  def liked?(post)
+    likes.find_by(post:).present?
+  end
 end
