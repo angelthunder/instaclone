@@ -1,4 +1,6 @@
 <div class="comment">
   <span class="comment-author"><%= comment.user.username %></span>
   <%= comment.body %>
+
+  <%= render partial: "comments/actions", locals: { comment: } %>
 </div>

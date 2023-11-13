@@ -8,13 +8,18 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_many :liked_posts,
+    through: :likes, source: :likable, source_type: "Post"
+  has_many :liked_comments,
+    through: :likes, source: :likable, source_type: "Comment"
+
   validates :username, presence: true
 
-  def like!(post)
-    likes << Like.new(post:)
+  def like!(likable)
+    likes << Like.new(likable:)
   end
 
-  def liked?(post)
-    likes.find_by(post:).present?
+  def liked?(likable)
+    likes.find_by(likable:).present?
   end
 end
